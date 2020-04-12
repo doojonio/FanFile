@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:12
+    environment:
+      - POSTGRES_USER=fanfile
+      - POSTGRES_PASSWORD=qwe123
+      - POSTGRES_DB=fanfile
+    volumes:
+      - /home/dockeroid/postgresql/fanfile_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  web:
+    build: .
+    volumes:
+      - "./:/app"
+    command: ["-q", "spring-boot:run"]
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
