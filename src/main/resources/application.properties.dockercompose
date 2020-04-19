@@ -1,4 +1,4 @@
-spring.datasource.url=jdbc:postgresql://localhost:1337/fanfile
+spring.datasource.url=jdbc:postgresql://db/fanfile
 spring.datasource.username=fanfile
 spring.datasource.password=qwe123
 
