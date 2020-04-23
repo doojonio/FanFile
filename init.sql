@@ -9,9 +9,10 @@ BEGIN;
     CREATE TABLE snippets (
         id            BIGINT      PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         user_id       BIGINT      REFERENCES users(id),
-        title         TEXT        NOT NULL,
-        is_hide       BOOLEAN     NOT NULL,
-        creating_date TIMESTAMPTZ NOT NULL
+        title         TEXT        DEFAULT 'Unnamed',
+        is_hide       BOOLEAN     DEFAULT 'f',
+        encrypted_key TEXT,
+        creating_date TIMESTAMPTZ DEFAULT now()
     );
 
     CREATE TABLE languages (
@@ -23,13 +24,8 @@ BEGIN;
         id          BIGINT   PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         snippet_id  BIGINT   REFERENCES snippets(id) ON DELETE CASCADE,
         language_id SMALLINT REFERENCES languages(id) ON DELETE CASCADE,
-        title       TEXT     NOT NULL,
-        content     TEXT     NOT NULL,
-        queue_num   SMALLINT NOT NULL
-    );
-
-    CREATE TABLE encrypted_keys (
-        snippet_id BIGINT PRIMARY KEY REFERENCES snippets(id) ON DELETE CASCADE,
-        key        TEXT   NOT NULL
+        title       TEXT     DEFAULT 'Unnamed',
+        content     TEXT     DEFAULT 'Empty content',
+        queue_num   SMALLINT DEFAULT 0
     );
 END;

@@ -12,8 +12,9 @@ import java.util.List;
 public interface SnippetRepository extends JpaRepository<Snippet, Long> {
     @Transactional
     Snippet findById(long id);
-
     @Transactional
     List<Snippet> findAllByUser(User user);
+    @Transactional
+    List<Snippet> findAllByIsHideOrderByCreatingDate(boolean isHide);
 }
 
