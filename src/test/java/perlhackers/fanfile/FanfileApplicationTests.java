@@ -1,4 +1,4 @@
-package ru.perlhackers.fanfile;
+package perlhackers.fanfile;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
