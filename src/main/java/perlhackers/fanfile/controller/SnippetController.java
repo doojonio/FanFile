@@ -15,6 +15,11 @@ public class SnippetController {
     @Autowired
     private SnippetService snippetService;
 
+    @GetMapping("/languages")
+    public List<String> getLanguageNames() {
+        return snippetService.getLanguageNames();
+    }
+
     @PostMapping
     public BaseResponse createSnippet(@RequestBody @NotNull SnippetDto snippetDto) {
         if (snippetDto.getFiles() == null) {

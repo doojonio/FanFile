@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import perlhackers.fanfile.Dto.FileDto;
 import perlhackers.fanfile.Dto.SnippetDto;
 import perlhackers.fanfile.entity.File;
+import perlhackers.fanfile.entity.Language;
 import perlhackers.fanfile.entity.Snippet;
 import perlhackers.fanfile.entity.User;
 import perlhackers.fanfile.repository.FileRepository;
@@ -73,15 +74,22 @@ public class SnippetService {
         List<SnippetDto> result = convertSnippets2Dto(snippets);
         return result;
     }
+    public List<String> getLanguageNames() {
+        List<Language> languages = languageRepository.findAll();
+        List<String> languageNames = new ArrayList<>();
 
+        for (Language language : languages) {
+            languageNames.add(language.getName());
+        }
+
+        return languageNames;
+    }
     public SnippetDto getSnippet(@NotNull @NotEmpty Long id) {
         return convertSnippet2Dto(snippetRepository.findById(id).get());
     }
-
     public SnippetDto getSnippet(@NotNull @NotEmpty String hiddenLink) {
         return convertSnippet2Dto(snippetRepository.findByHiddenLink(hiddenLink));
     }
-
     public static SnippetDto convertSnippet2Dto(Snippet snippet) {
         if (snippet == null) {
             return null;
