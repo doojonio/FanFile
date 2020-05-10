@@ -37,4 +37,10 @@ public class UserController {
 
         return userDto;
     }
+
+    @PostMapping("/login")
+    public UserDto login(@RequestBody UserDto userDto) throws Exception {
+        Boolean auth = userService.authUser(userDto);
+        return auth ? userDto : null;
+    }
 }
