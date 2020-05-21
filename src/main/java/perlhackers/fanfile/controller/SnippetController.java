@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/snippet")
 public class SnippetController {
     @Autowired

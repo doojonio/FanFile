@@ -1,0 +1,36 @@
+<h1>USER DETAILS</h1>
+<div class="user-block">
+  <table class="user-info">
+    <tr>
+      <td>Name</td> 
+      <td>{{user.login}}</td>
+    </tr>
+    <tr>
+      <td>Snippet amount</td>
+      <td>{{user.snippetAmount}}</td>
+    </tr>
+  </table>
+
+  <ul class="snippets">
+    <li *ngFor="let snippet of user.snippets">
+      <div class="head">
+        <span class="title">{{snippet.title | uppercase }}</span>
+        <span>{{snippet.createTime}}</span>
+      </div>
+      <div class="body">
+        <ul class="files">
+          <li *ngFor="let file of snippet.files">
+            <div class="head">
+              <span class="title">{{file.title}}</span>
+              <span>{{file.language}}</span>
+              <span>{{file.changeTime}}</span>
+            </div>
+            <div class="body">
+              <pre class="code">{{file.content}}</pre>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

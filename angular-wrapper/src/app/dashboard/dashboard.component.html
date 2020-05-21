@@ -1,0 +1,24 @@
+<script>hljs.initHighlightingOnLoad();</script>
+<ul class="snippets">
+  <li *ngFor="let snippet of snippets">
+    <div class="head">
+      <span class="title">{{snippet.title | uppercase }}</span>
+      <span><a routerLink="/user/{{snippet.userId}}">{{snippet.userLogin}}</a></span>
+      <span>{{snippet.createTime}}</span>
+    </div>
+    <div class="body">
+      <ul class="files">
+        <li *ngFor="let file of snippet.files">
+          <div class="head">
+            <span class="title">{{file.title}}</span>
+            <span>{{file.language}}</span>
+            <span>{{file.changeTime}}</span>
+          </div>
+          <div class="body">
+            <pre><code class="{{file.language}}">{{file.content}}</code></pre>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>

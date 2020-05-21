@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+}
+
+.snippets {
+    padding: 10px;
+    list-style: none;
+}
+
+.snippets li {
+    display: block;
+    margin: 20px 0;
+    padding: 0;
+    border: 1px solid #dbdbdb;
+}
+
+.snippets .head {
+    padding: 5px;
+    margin : 0;
+    background: #f1f1f1;
+}
+
+.snippets a {
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.snippets span {
+    margin-right: 10px;
+}
+
+.snippets .title {
+    font-weight: bold;
+}
+
+.files  {
+    padding: 0 10px;
+}
+
+.files li {
+    margin: 10px 0;
+}
+
+.files pre {
+    padding: 10px 10px;
+    margin: 0;
+}
+
