@@ -1,0 +1,38 @@
+<div class="form-container">
+  <h1>NEW SNIPPET</h1>
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input required [(ngModel)]="model.title" name="title" type="text" class="form-control W250" id="title" required>
+    </div>
+    <div class="form-group">
+      <label for="isPublic">Public</label>
+      <input required [(ngModel)]="model.isPublic" name="isPublic" type="checkbox" class="form-control" id="isPublic">
+    </div>
+
+    <button (click)="addEmptyFile()" class="btn btn-inline btn-push"></button>
+    <button (click)="popLastFile()" [disabled]="model.files.length < 2" class="btn btn-pop"></button>
+
+    <div *ngFor="let file of model.files; let i = index" class="file-form">
+      <h3>File #{{i}}</h3>
+      <div class="form-group">
+        <label for="title{{i}}">Title</label>
+        <input required [(ngModel)]="file.title" name="file{{i}}Title" type="text" class="form-control W250" required>
+      </div>
+      <div class="form-group">
+        <label for="language{{i}}">Language</label>
+        <select id="language{{i}}" required
+                [(ngModel)]="file.language" name="file{{i}}Language">
+          <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option> 
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="content{{i}}">Code</label>
+        <textarea required id="content{{i}}" cols="50" rows="10"
+        [(ngModel)]="file.content" name="file{{i}}Content"></textarea>
+      </div>
+    </div>
+
+    <button type="submit" (click)="onSubmit()" class="btn btn-success">CREATE</button>
+  </form>
+</div>

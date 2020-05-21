@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Snippets</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td><a routerLink="/user/{{user.id}}">{{user.login}}</a></td>
+    <td>{{user.snippetAmount}}</td>
+  </tr>
+</table>

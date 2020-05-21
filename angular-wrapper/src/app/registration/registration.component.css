@@ -1,0 +1,31 @@
+.register-form {
+  margin: 10px 20%;
+  width: 60%;
+}
+
+.register-form .form-group {
+  margin-bottom: 10px;
+}
+
+.register-form .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.btn-login {
+  width: 40%;
+  border: none;
+  background: black;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.success {
+  color: black;
+  margin-left: 30%;
+  margin-top: 25%;
+  font-size: 32px;
+}

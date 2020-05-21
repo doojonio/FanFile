@@ -7,8 +7,10 @@ import perlhackers.fanfile.response.BaseResponse;
 import perlhackers.fanfile.service.UserService;
 
 import javax.websocket.server.PathParam;
+import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/user")
 public class UserController {
     @Autowired
@@ -19,9 +21,14 @@ public class UserController {
     private static int CODE_ERROR   = 400;
 
     @PostMapping
-    public BaseResponse registerUser (@RequestBody UserDto userDto) throws Exception {
-        userService.registerUser(userDto);
-        return new BaseResponse(SUCCESS, CODE_SUCCESS);
+    public UserDto registerUser (@RequestBody UserDto userDto) throws Exception {
+        UserDto createdUser = userService.registerUser(userDto);
+        return createdUser;
+    }
+
+    @GetMapping("/all")
+    public List<UserDto> getTopUsers() {
+        return userService.getUsers();
     }
 
     @GetMapping
@@ -40,7 +47,6 @@ public class UserController {
 
     @PostMapping("/login")
     public UserDto login(@RequestBody UserDto userDto) throws Exception {
-        Boolean auth = userService.authUser(userDto);
-        return auth ? userDto : null;
+        return userService.authUser(userDto);
     }
 }

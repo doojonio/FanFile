@@ -1,0 +1,21 @@
+table {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 10%;
+  border-spacing: 0;
+  box-shadow: 0 0 20px #f1f1f1;
+}
+tr:nth-child(even) {
+  background: #f1f1f1;
+}
+
+td, th {
+  padding: 5px;
+  text-align: center;
+}
+
+td a {
+  text-decoration: none;
+  color: black;
+  font-style: italic;
+}

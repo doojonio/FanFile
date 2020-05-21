@@ -1,0 +1,28 @@
+<div class="auth-block" *ngIf="showAuth">
+    <button (click)="closeAuth()" class="btn-close"></button>
+    <app-auth></app-auth>
+</div>
+<div class="auth-block" *ngIf="showRegister">
+  <button (click)="closeRegister()" class="btn-close"></button>
+  <app-registration></app-registration>
+</div>
+<div class="user-bar">
+    <table>
+        <tr>
+          <td>ID:</td>
+          <td>{{user.id}}</td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>{{user.login}}</td>
+        </tr>
+        <tr>
+          <td>Snippets:</td>
+          <td>{{user.snippetAmount}}</td>
+        </tr>
+    </table>
+
+    <button *ngIf="!user || user.id == 1" (click)="login()">LOGIN</button>
+    <button *ngIf="!user || user.id == 1" (click)="register()">REGISTER</button>
+    <button *ngIf="user && user.id != 1" (click)="logout()">LOGOUT</button>
+</div>

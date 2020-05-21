@@ -10,18 +10,14 @@ import java.sql.Timestamp;
 public class FileDto {
     @NotEmpty
     private long id;
-    @NotNull
     @NotEmpty
     private String title;
-    @NotNull
     @NotEmpty
     private String content;
-    @NotNull
     @NotEmpty
     private long snippetId;
     @NotEmpty
     private Timestamp changeTime;
-    @NotNull
     @NotEmpty
     private String language;
 }

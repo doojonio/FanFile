@@ -1,0 +1,48 @@
+.user-bar {
+  position: fixed;
+  width: 180px;
+  height: 110px;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px;
+  background: #f1f1f1;
+}
+
+.user-bar table {
+    vertical-align: middle;
+}
+
+.user-bar button {
+    background: #f1f1f1;
+    width: 80%;
+    margin: 0 10%;
+}
+
+.user-bar table tr :first-child {
+    font-weight: bold;
+}
+
+.auth-block {
+  position: fixed;
+  width: 30%;
+  left: 35%;
+  right:35%;
+  top:30%;
+  bottom:30%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+.btn-close {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  background: url("/assets/close.png");
+  background-size: cover;
+  border: none;
+}

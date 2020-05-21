@@ -1,0 +1,57 @@
+.form-container {
+  width: 60%;
+  margin: 0 20%;
+}
+
+.form-group {
+  margin: 20px 0;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin: 0 20px 0 0;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+.W250 {
+  width: 250px;
+}
+
+.btn {
+  border-radius: 10px;
+  width: 20%;
+  border: none;
+  font-weight: bold;
+  background: #f1f1f1;
+}
+
+.btn-success {
+    border: 1px solid black;
+}
+
+.btn-inline {
+  margin-right: 10px;
+}
+
+.btn-push {
+  width: 30px;
+  height: 30px;
+  background: no-repeat url("/assets/plus.png");
+  background-size: cover;
+}
+
+.btn-pop {
+  width: 30px;
+  height: 30px;
+  background: no-repeat url("/assets/minus.png");
+  background-size: cover;
+}
+
+.file-form {
+  padding-left: 10px;
+  border-left: 3px solid black;
+  border-radius: 2px;
+}
